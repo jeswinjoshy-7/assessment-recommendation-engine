@@ -12,6 +12,6 @@ RUN chmod +x docker-entrypoint.sh
 
 RUN chmod +x docker-entrypoint.sh
 
-EXPOSE 8000
+EXPOSE ${PORT:-8000}
 
 CMD ["./docker-entrypoint.sh"]

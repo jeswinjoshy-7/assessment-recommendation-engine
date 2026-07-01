@@ -30,5 +30,6 @@ else:
     client.close()
 "
 
-echo "Starting API server..."
-exec uvicorn app:app --host 0.0.0.0 --port 8000
+PORT="${PORT:-8000}"
+echo "Starting API server on port $PORT..."
+exec uvicorn app:app --host 0.0.0.0 --port "$PORT"
