@@ -7,7 +7,7 @@ from weaviate.classes.query import Filter as WFilter
 from collections import Counter
 from sentence_transformers import SentenceTransformer, CrossEncoder
 
-MODEL_NAME = "jinaai/jina-embeddings-v2-small-en"
+MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 CE_MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 CATALOG_PATH = os.path.join("data", "catalog_clean.json")
 
@@ -88,7 +88,7 @@ def _get_ce():
 def _get_model():
     global _model
     if _model is None:
-        _model = SentenceTransformer(MODEL_NAME, trust_remote_code=True)
+        _model = SentenceTransformer(MODEL_NAME)
     return _model
 
 

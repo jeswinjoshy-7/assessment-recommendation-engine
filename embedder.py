@@ -109,10 +109,7 @@ def main():
 
     print("Loading Jina embedding model...")
     from sentence_transformers import SentenceTransformer
-    model = SentenceTransformer(
-        "jinaai/jina-embeddings-v2-small-en",
-        trust_remote_code=True,
-    )
+    model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
     dim = model.get_sentence_embedding_dimension()
     print(f"Model loaded. Embedding dim: {dim}")
 
